@@ -1,0 +1,2 @@
+1. tuple vs list
+tuple can't change, and the index in tuple has meaning
