@@ -1,0 +1,20 @@
+chap2： 序列构成的数组：
+
+2.1 序列：
+分类：
+    容器序列：list,tuple,collections.deque  (存放不同类型， 存放引用）
+    扁平序列：str, bytes, bytearray, memoryview, array.array （存放相同类型， 存放值类型）
+    vs.
+    可变序列：list, bytearray, array.array. collections.deque, memoryview
+    不可变序列： tuple,str, bytes
+
+2. 2
+a. 变量泄露问题：
+    py2.7中，下面x的值会被 推导式 改变， python3.x中 不会出现了
+    x = "ABC"
+    xlist  = [x for x in 'ABC']
+
+b. 列表推导式 速度 vs map& filter,  后者不是肯定 优于 前者
+
+c. 生成器：
+    如果生成器 是函数调用的唯一参数，则**不需要**再加括号,  如 tuple(ord(s) for s in symbols)

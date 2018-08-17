@@ -1,2 +1,6 @@
 1. tuple vs list
 tuple can't change, and the index in tuple has meaning
+
+### 1.2.py
+%r 中显示的是 __repr__ 方法， 返回的字符串应该是 准确 无歧义的， 尽可能的表达出如何用代码创建出这个被打印的对象。
+__str__ vs. __repr__:  前者 只有在 print obj 或者 str(obj) 时被调用， 如果没有 __str__ ，会去找__repr__ 方法。 推荐优先实现__repr__

@@ -30,10 +30,14 @@ class FrenchDeck:
     def get_same_ranks(self, rank_name):
         if rank_name in self.ranks:
             return self[self.ranks.index(rank_name)::13]
+
+
 fd = FrenchDeck()
+
 
 def test_len():
     print len(fd)
+
 
 def test_getitem():
     print "# =========== slice"
@@ -57,7 +61,10 @@ def test_getitem():
     for card in sorted(fd, key=spades_high):
         print card
 
-suits_value = dict(spades=3, hearts=2, diamonds=1,clubs=0)
+
+suits_value = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+
+
 def spades_high(card):
     rank_value = FrenchDeck.ranks.index(card.rank)
     return rank_value * len(suits_value) + suits_value[card.suit]
@@ -66,5 +73,3 @@ def spades_high(card):
 if __name__ == '__main__':
     test_len()
     test_getitem()
-
-
