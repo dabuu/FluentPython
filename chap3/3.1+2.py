@@ -28,6 +28,7 @@ def collection_abc_test_1():
     print isinstance(my_dict, collections.MutableMapping)
     print isinstance(my_dict, collections.Mapping)
     print isinstance(my_dict, dict)
+    print isinstance(my_dict, collections.defaultdict)
 
     print "====================="
 
@@ -69,5 +70,5 @@ def dict_comp_test_2():
 
 
 if __name__ == '__main__':
-    # collection_abc_test_1()
-    dict_comp_test_2()
+    collection_abc_test_1()
+    # dict_comp_test_2()
