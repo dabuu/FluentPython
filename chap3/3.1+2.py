@@ -5,6 +5,7 @@
 @contact: dabuwang
 @desc: 3.1 泛映射类型: collections.abc (python 3.3+) || collections (python 2.6~3.2) : Mapping & MutableMapping. 为dict 或类似的类型定义形式接口。
 3.2 dict comprehension 字典推导
+ignore by dabuuX
 """
 __author__ = 'dabuwang'
 
