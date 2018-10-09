@@ -104,10 +104,11 @@ def use_defaultdict_test_3():
     for word in sorted(index, key=str.upper):
         print (word, index[word])
 
+
 class StrKeyDict0(dict):
     def __missing__(self, key):
-        if isinstance(key,str):
-            raise  KeyError(key)
+        if isinstance(key, str):
+            raise KeyError(key)
         return self[str(key)]
 
     def get(self, key, default=None):
@@ -119,8 +120,9 @@ class StrKeyDict0(dict):
     def __contains__(self, key):
         return key in self.keys() or str(key) in self.keys()
 
+
 def use_missing_in_subdict_test_4():
-    td = dict([("2","two"),("4", "four")])
+    td = dict([("2", "two"), ("4", "four")])
     print td["2"]
     try:
         print td[4]
@@ -132,7 +134,7 @@ def use_missing_in_subdict_test_4():
 
     print "=============="
 
-    skd = StrKeyDict0([("2","two"),("4", "four")])
+    skd = StrKeyDict0([("2", "two"), ("4", "four")])
     print skd["2"]
     print skd[4]
     print skd.get(2)
