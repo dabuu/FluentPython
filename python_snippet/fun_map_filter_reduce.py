@@ -8,10 +8,18 @@ __author__ = 'dabuwang'
 
 
 def test_map():
-    pass
+    td = ['aa', '123']
+    # ts = "fjsadluovx123fsfjouvxabc aa"
+    ts = "fjsadluovx123fsfjouvxabc"
+    ret = map(lambda x: x in ts, td)
+    print "map check rst: ", ret
+
+    ret = reduce(lambda x,y: x & y, ret)
+    print "reduce map rst: ", ret
 
 
 def test_filter():
+    print filter(None, ["", "123", "1235", "4123", ""])
     pass
 
 
@@ -29,4 +37,4 @@ def test_reduce():
 if __name__ == '__main__':
     test_map()
     test_filter()
-    test_reduce()
+    # test_reduce()

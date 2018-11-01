@@ -1,0 +1,39 @@
+# 快速生成requirement.txt的安装文件
+方法1: [会生成所有项目所需的依赖，太多！]
+$ pip freeze > requirements.txt
+
+方法2： [只生成指定目录下的文件列表。 ]
+$ pip install pipreqs
+$ pipreqs /path/to/project
+
+********** pipreqs help **********
+Usage:
+    pipreqs [options] <path>
+
+Options:
+    --use-local           Use ONLY local package info instead of querying PyPI
+    --pypi-server <url>   Use custom PyPi server
+    --proxy <url>         Use Proxy, parameter will be passed to requests library. You can also just set the
+                          environments parameter in your terminal:
+                          $ export HTTP_PROXY="http://10.10.1.10:3128"
+                          $ export HTTPS_PROXY="https://10.10.1.10:1080"
+    --debug               Print debug information
+    --ignore <dirs>...    Ignore extra directories, each separated by a comma
+    --encoding <charset>  Use encoding parameter for file open
+    --savepath <file>     Save the list of requirements in the given file
+    --print               Output the list of requirements in the standard output
+    --force               Overwrite existing requirements.txt
+    --diff <file>         Compare modules in requirements.txt to project imports.
+    --clean <file>        Clean up requirements.txt by removing modules that are not imported in project.
+**********
+举例：
+pipreqs 使用代理：
+C:\Python27\Scripts\pipreqs.exe --proxy "https://<host>:<ip>" --force D:\Code\Test
+
+pipreqs 使用本地 package：
+C:\Python27\Scripts\pipreqs.exe --use-local "https://<host>:<ip>" D:\Code\Test
+
+
+
+# 安装所需要的文件
+pip install -r requirement.txt
