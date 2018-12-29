@@ -8,6 +8,8 @@ run one cmd, and check result by another socket client's output.
 ====
 solution snippet like below
 """
+import time
+
 __author__ = 'dabuwang'
 
 import subprocess
@@ -15,11 +17,11 @@ import thread
 import os
 import signal
 from threading import Timer
-
+from threading import Thread
 
 def test_main():
-    socket_client_check_msg = r'ping localhost -n 100'
-    main_ps = subprocess.Popen(socket_client_check_msg, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    test_cmd = r'ping localhost -n 100'
+    main_ps = subprocess.Popen(test_cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     my_timer = Timer(5, lambda ps: os.killpg(os.getpgid(ps.pid), signal.SIGTERM) , [main_ps])
     try:
         thread.start_new_thread(test_thread, ())
@@ -37,6 +39,20 @@ def test_main():
 def test_thread():
     os.system("ping localhost -n 2")
     os.system("calc.exe")
+
+
+def run_cmd(cmd, time_wait=-1):
+    subp = subprocess.Popen(cmd, shell=True, close_fds=True, stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+    if time_wait <= 0:
+        subp.wait()
+    else:
+        time.sleep(time_wait)
+    out, err = subp.communicate()
+    return out, err
+
+
+
 
 
 if __name__ == '__main__':

@@ -34,7 +34,7 @@ def my_test(xdict, *key_list):
         return my_test(xdict.get(key_list[0]), *key_list[1:])
 
 def deep_get(dictionary, *keys):
-    return reduce(lambda d, key: d.get(key) if d else None, keys, dictionary)
+    return reduce(lambda d, key: (d.get(key) if not isinstance(key, int) else d[key]) if d else None, keys, dictionary)
 
 
 if __name__ == '__main__':

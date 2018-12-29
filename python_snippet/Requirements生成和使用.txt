@@ -35,5 +35,8 @@ C:\Python27\Scripts\pipreqs.exe --use-local "https://<host>:<ip>" D:\Code\Test
 
 
 
+OA例子：
+C:\Python27\Scripts\pipreqs.exe --proxy "https://web-proxy.tencent.com:8080" --force D:\Code\Code.oa\Git\yujie\yujie_ng_nbs_proj\pcmgr_security\common\py\yujiepylib
+
 # 安装所需要的文件
 pip install -r requirement.txt
