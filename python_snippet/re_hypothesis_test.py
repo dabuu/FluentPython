@@ -1,6 +1,6 @@
 # coding:utf-8
 """
-@file: tmp_test.py
+@file: re_hypothesis_test.py
 @time: 2018/12/3 10:32
 @contact: dabuwang
 @desc: todo
