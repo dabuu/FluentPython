@@ -11,17 +11,14 @@ __author__ = 'dabuwang'
 
 
 def xYxHandle(i_str):
-    print "=" * 15
-    if len(i_str) < 3:
-        print "result:", i_str
-        return
+    print "=" * 15 + i_str
 
-    str_len = len(i_str)
-    n_str = list(i_str[:2])
-    for i in range(2, str_len):
-        n_str.append(i_str[i])
+    n_str = list()
+    for s in i_str:
+        n_str.append(s)
         if len(n_str) < 3:
             continue
+
         if n_str[-1] == n_str[-3] and n_str[-1] != n_str[-2]:
             print "rm xYx:", "".join(n_str[-3:])
             n_str = n_str[:-3]
