@@ -85,6 +85,21 @@ def list_augmented_assignment_test_1():
 
 def list_augmented_assignment_test_2():
     """
+    >> dis.dis('s[a] += b')
+  1           0 LOAD_NAME                  0(s)
+              3 LOAD_NAME                  1(a)
+              6 DUP_TOP_TWO
+              7 BINARY_SUBSCR                      ➊
+              8 LOAD_NAME                  2(b)
+             11 INPLACE_ADD                        ➋
+             12 ROT_THREE
+             13 STORE_SUBSCR                       ➌
+             14 LOAD_CONST                 0(None)
+             17 RETURN_VALUE
+➊ 将 s[a] 的值存入 TOS（Top Of Stack，栈的顶端）。
+➋ 计算 TOS += b。这一步能够完成，是因为 TOS 指向的是一个可变对象（也就是示例 2-15 里的列表）。
+➌ s[a] = TOS 赋值。这一步失败，是因为 s 是不可变的元组（示例 2-15 中的元组 t）。
+
     STRANGE question for +=
     BTW, Python Tutor是一个对 Python 运行原理进行可视化分析的工具
     =========
