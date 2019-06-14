@@ -10,9 +10,9 @@ __author__ = 'dabuwang'
 
 def find_sec_max(alist):
     print "=" * 10 + "> find sec value: %s" % repr(alist)
-    x, y = None, None
     if len(alist) < 1:
         return None
+    x, y = None, None
 
     for i in alist:
         if not isinstance(i, int):
@@ -38,3 +38,5 @@ if __name__ == '__main__':
     find_sec_max([1])  # none
     find_sec_max([3, 2, 3, 111111111111111111])  # 2
     find_sec_max(['@', 3, 2, 1, 'a'])  # 2
+    find_sec_max([0, 0, -1, -2, -2])  # -1
+    find_sec_max([1, 0, -1, -2, -2])  # 0
