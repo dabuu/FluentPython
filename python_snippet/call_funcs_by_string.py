@@ -59,5 +59,28 @@ def test_locals():
     print(r)
 
 
+class KlsTest:
+    def __init__(self):
+        self.__class__.__dict__["gene_test1"].__func__(4, "b")
+        self.__class__.__dict__["gene_test2"].__func__()
+        self.__class__.__dict__["gene_test3"](self)
+        fun_object = self.__class__.__dict__.get("gene_test1", None)
+        fun_object.__func__(3, "a")
+        fun_object = self.__class__.__dict__.get("gene_test4", None)
+        print fun_object
+        # fun = [key for key in self.__class__.__dict__.keys() if key.startswith("gene_test")]
+        # print fun
+
+    @staticmethod
+    def gene_test1(x,y):
+        print "gene_test1", x, y
+    @staticmethod
+    def gene_test2():
+        print "gene_test2"
+    def gene_test3(self):
+        print "gene_test3"
+
+
 if __name__ == '__main__':
-    test_locals()
+    KlsTest()
+    # test_locals()
