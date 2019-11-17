@@ -69,7 +69,7 @@ def main():
     host = options.host
     ports = str(options.port).split(',')
 
-    if (host == None) | (len(ports) == 0):
+    if (host is None) | (len(ports) == 0):
         print parser.usage
         exit(0)
     scanning_ports(host, ports)
