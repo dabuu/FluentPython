@@ -19,6 +19,7 @@ def hex2char_itiswrong():
 
     print chr(int(input_str2, 16))
     print repr(chr(int(input_str2, 16)))
+    print repr(input_str2.decode('hex'))
 
 def str2hex():
     input_str = '00'
@@ -36,8 +37,15 @@ def int2hexstr():
     hex_str = '{:02x}'.format(rint)
     print "rint:'{0}', convert to hex: {1}".format(rint, hex_str)
 
+def foo():
+    a = '\x00'
+    b = '00'.decode('hex')
+    print b == a  # True
+    # 三种字符串 "", u"", b"\x0F"，str, bytes
+    # https://blog.csdn.net/anlian523/article/details/80504699
 
 if __name__ == '__main__':
+    hex2char_itiswrong()
     # str2hex()
     # hexstr2int()
-    int2hexstr()
+    # int2hexstr()

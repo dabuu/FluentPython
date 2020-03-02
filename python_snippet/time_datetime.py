@@ -7,6 +7,7 @@
 
 import time
 from datetime import datetime
+from datetime import timedelta
 
 """
 python中时间日期格式化符号：
@@ -52,3 +53,10 @@ def time_func():
 def datetime_func():
     datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')
     datetime.now().strptime("2020-02-14T20:20:10.610000", '%Y-%m-%dT%H:%M:%S.%f')
+
+def datetime_delta(days=0):
+    datetime.now() + timedelta(days=days)
+
+"""
+about timezone,see here: https://docs.python.org/3/library/datetime.html#tzinfo-objects
+"""

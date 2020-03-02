@@ -23,6 +23,10 @@ def str_encode():
     from urllib import quote
     data = '{"a":1,"field":["age"],"minute":120}'
     print quote(data)
+    safe_data = 'a//b'
+    print quote(safe_data, safe='')
+    safe_data = 'a//bb\\c&'
+    print quote(safe_data, safe='/,&')
 
 
 def url_decode():
